@@ -66,12 +66,5 @@ MongoDB will automatically create it when data is added.
 
 
 
-## 📁 Folder Structure
 
-password-manager/
-├── backend/         # Express + MongoDB server
-├── src/             # React app
-├── components/      # React components
-├── public/          # Public assets
-└── README.md        # You're here
 
