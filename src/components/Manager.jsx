@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRef } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
+const BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
 
 
@@ -25,7 +26,7 @@ const Manager = () => {
     const passwordRef = useRef()
 
     const getpasswords = async () => {
-        let res = await fetch('http://localhost:3000/')
+        let res = await fetch(`${BASE_URL}/`)
         let data = await res.json()
         if (data) {
             setpassword(data);
@@ -92,7 +93,7 @@ const Manager = () => {
 
             });
             setpassword([...password, newform])
-            await fetch("http://localhost:3000/", {
+            await fetch(`${BASE_URL}/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -116,7 +117,7 @@ const Manager = () => {
             let newPassword = password.filter((e) => { return id != e.id })
             setpassword(newPassword)
             try {
-               const res= await fetch('http://localhost:3000/', {
+               const res= await fetch(`${BASE_URL}/`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
@@ -166,7 +167,7 @@ const Manager = () => {
         setform({ site: row.site, username: row.username, password: row.password });
         let newPassword = password.filter((e) => { return row.id != e.id })
         setpassword(newPassword)
-        const res= await fetch('http://localhost:3000/', {
+        const res= await fetch(`${BASE_URL}/`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
