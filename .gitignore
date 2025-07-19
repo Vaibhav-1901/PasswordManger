@@ -7,18 +7,44 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Local environment files
+.env
 *.local
 
-# Editor directories and files
-.vscode/*
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# IDEs and editors
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
+
+# Visual Studio files
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Mac system files
+*.DS_Store
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Optional REPL history
+.node_repl_history
+
+# dotenv environment variables files
+.env.*

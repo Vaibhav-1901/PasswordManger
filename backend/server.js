@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express()
 const cors = require('cors');
 require('dotenv').config()
-const Password = require('./models/password.js');
+const Password = require(process.env.MONGO_URI);
 const port = 3000
 mongoose.connect("process.env.MONGO_URI")
 .then((e)=>{console.log("Connected to MongoDB")})
